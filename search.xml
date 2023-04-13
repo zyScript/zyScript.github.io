@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>程序设计语言</title>
+      <link href="/2023/04/13/cheng-xu-she-ji-yu-yan/"/>
+      <url>/2023/04/13/cheng-xu-she-ji-yu-yan/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="二、程序设计语言"><a href="#二、程序设计语言" class="headerlink" title="二、程序设计语言"></a>二、程序设计语言</h4><h5 id="1、低级语言和高级语言"><a href="#1、低级语言和高级语言" class="headerlink" title="1、低级语言和高级语言"></a>1、低级语言和高级语言</h5><p>​低级语言：机器语言、汇编语言</p><p>​高级语言：Java、C、C++等面向各类应用的程序设计语言</p><h5 id="2、编译程序和解释程序"><a href="#2、编译程序和解释程序" class="headerlink" title="2、编译程序和解释程序"></a>2、编译程序和解释程序</h5><p>​语言之间的翻译形式：汇编、解释和编译</p><p>​<strong>解释器</strong>：翻译源程序时不生成独立的目标程序</p><p>​解释程序和源程序要参与到程序的运行过程中</p><p>​<strong>编译器</strong>:翻译时将源程序翻译成独立保存的目标程序</p><p>​机器上运行的是与源程序等价的目标程序源程序和编译程序都不再参与目标程序的运行过程</p><h5 id="3、程序设计语言基本成分"><a href="#3、程序设计语言基本成分" class="headerlink" title="3、程序设计语言基本成分"></a>3、程序设计语言基本成分</h5><p>​程序设计语言的基本成分：数据、运算、控制和传输等</p><p>​程序的三种基本结构：顺序、选择、循环（重复）</p><p>​程序设计语言中规定数据必须有类型，有以下三个优点</p><ol><li>便于为数据合理分配存储单元</li><li>便于对参与表达式计算的数据对象进行检查</li><li>便于规定数据对象的取值范围及能够进行的运算</li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo博客新建文档</title>
+      <link href="/2023/04/12/article/"/>
+      <url>/2023/04/12/article/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 搭建博客 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2023/04/12/hello-world/"/>
+      <url>/2023/04/12/hello-world/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
