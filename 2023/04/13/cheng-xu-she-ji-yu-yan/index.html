@@ -442,8 +442,25 @@
 <p>语义分析阶段<strong>不能</strong>发现程序中所有的语义错误</p>
 <p>语义分析阶段<strong>可以</strong>发现静态语义错误</p>
 <p><strong>不能</strong>发现动态语义错误，动态语义错误运行时才能发现</p>
-<p><strong>目标代码</strong>生成目标代码生成阶段的工作与具体的机器密切相关寄存器的分配工作处于目标代码生成阶段</p>
-<h5 id="8、目标代码生成"><a href="#8、目标代码生成" class="headerlink" title="8、目标代码生成"></a>8、目标代码生成</h5>
+<h5 id="8、目标代码生成"><a href="#8、目标代码生成" class="headerlink" title="8、目标代码生成"></a>8、目标代码生成</h5><p><strong>目标代码</strong>生成目标代码生成阶段的工作与具体的机器密切相关寄存器的分配工作处于目标代码生成阶段</p>
+<h5 id="9、中间代码生成"><a href="#9、中间代码生成" class="headerlink" title="9、中间代码生成"></a>9、中间代码生成</h5><p>常见的中间代码有: 后缀式、三地址码、三元式、四元式和树(图) 等形式</p>
+<p>中间代码与具体的机器无关 (不依赖具体的机器)可以将不同的高级程序语言翻译成同一种中间代码中间代码可以跨平台。</p>
+<p>因为与具体的机器无关，使用中间代码有利于进行与机器无关的优化处理和提高编译程序的可移植性</p>
+<h5 id="10、正规式"><a href="#10、正规式" class="headerlink" title="10、正规式"></a>10、正规式</h5><p><img src="C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20230415193929360.png" alt="image-20230415193929360"></p>
+<h5 id="11、有限自动机"><a href="#11、有限自动机" class="headerlink" title="11、有限自动机"></a>11、有限自动机</h5><p><strong>有限自动机</strong>是<strong>词法分析</strong>的一个工具，它能正确地识别正规集<br><strong>确定的有限自动机</strong> (DFA) : 对每一个状态来说识别字符后转移的状态是唯一的</p>
+<p><strong>不确定的有限自动机</strong> (NFA) : 对每一个状态来说识别字符后转移的状态是不唯一的</p>
+<h5 id="12、上下文无关文法"><a href="#12、上下文无关文法" class="headerlink" title="12、上下文无关文法"></a>12、上下文无关文法</h5><p><img src="C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20230419101945680.png" alt="image-20230419101945680"></p>
+<p><img src="C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20230419103322547.png" alt="image-20230419103322547"></p>
+<p><strong>推出来的句子最后必须全部是终结符号</strong></p>
+<p><strong>终结符号：无法再往下继续推导的符号</strong></p>
+<h5 id="13、中缀、后缀表达式的转换"><a href="#13、中缀、后缀表达式的转换" class="headerlink" title="13、中缀、后缀表达式的转换"></a>13、中缀、后缀表达式的转换</h5><p>中缀式：a ? b</p>
+<p>后缀式（逆波兰式）：ab?</p>
+<p>优先级：①（）②  x ,/  ③ +,-</p>
+<p>中缀变后缀：优先级相同，从右向左算</p>
+<p>后缀变中缀：采用栈的概念  ，从左到右依次入栈，遇到运算符计算后再入栈。</p>
+<p>中缀二叉树：左根右</p>
+<p>后缀二叉树：左右根</p>
+
                 
             </div>
             <hr/>
