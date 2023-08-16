@@ -4,8 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="归档, ZY">
-    <meta name="description" content="ZY">
+    <meta name="keywords" content="视频项目开发, ZY">
+    <meta name="description" content="@Aspect
+@Component
+public class LogAspect {
+
+    private final static Logger LOG = LoggerFactory.getLogger(LogAspect.cla">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>归档 | ZY</title>
+    <title>视频项目开发 | ZY</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -330,383 +334,481 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                不如不见
-                
-            </div>
+    
 
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="/libs/typed/typed.js"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "你好",
-                            
-                                "再见",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">视频项目开发</h1>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
-<script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-</script>
 
 
-    </div>
-</div>
-
-<main class="content">
+<main class="post-container content">
 
     
-    <div class="container archive-calendar">
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
     <div class="card">
-        <div id="post-calendar" class="card-content"></div>
-    </div>
-</div>
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
 
-<script type="text/javascript" src="/libs/echarts/echarts.min.js"></script>
-<script type="text/javascript">
-    let myChart = echarts.init(document.getElementById('post-calendar'));
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-08-16
+                </div>
+                
 
-    
+                
 
-    let option = {
-        title: {
-            top: 0,
-            text: '文章日历',
-            left: 'center',
-            textStyle: {
-                color: '#3C4858'
-            }
-        },
-        tooltip: {
-            padding: 10,
-            backgroundColor: '#555',
-            borderColor: '#777',
-            borderWidth: 1,
-            formatter: function (obj) {
-                var value = obj.value;
-                return '<div style="font-size: 14px;">' + value[0] + '：' + value[1] + '</div>';
-            }
-        },
-        visualMap: {
-            show: true,
-            showLabel: true,
-            categories: [0, 1, 2, 3, 4],
-            calculable: true,
-            inRange: {
-                symbol: 'rect',
-                color: ['#ebedf0', '#c6e48b', '#7bc96f', '#239a3b', '#196127']
-            },
-            itemWidth: 12,
-            itemHeight: 12,
-            orient: 'horizontal',
-            left: 'center',
-            bottom: 0
-        },
-        calendar: [{
-            left: 'center',
-            range: ["2022-08-16", "2023-08-16"],
-            cellSize: [13, 13],
-            splitLine: {
-                show: false
-            },
-            itemStyle: {
-                color: '#196127',
-                borderColor: '#fff',
-                borderWidth: 2
-            },
-            yearLabel: {
-                show: false
-            },
-            monthLabel: {
-                nameMap: 'cn',
-                fontSize: 11
-            },
-            dayLabel: {
-                formatter: '{start}  1st',
-                nameMap: 'cn',
-                fontSize: 11
-            }
-        }],
-        series: [{
-            type: 'heatmap',
-            coordinateSystem: 'calendar',
-            calendarIndex: 0,
-            data: [["2022-08-16", 0], ["2022-08-17", 0], ["2022-08-18", 0], ["2022-08-19", 0], ["2022-08-20", 0], ["2022-08-21", 0], ["2022-08-22", 0], ["2022-08-23", 0], ["2022-08-24", 0], ["2022-08-25", 0], ["2022-08-26", 0], ["2022-08-27", 0], ["2022-08-28", 0], ["2022-08-29", 0], ["2022-08-30", 0], ["2022-08-31", 0], ["2022-09-01", 0], ["2022-09-02", 0], ["2022-09-03", 0], ["2022-09-04", 0], ["2022-09-05", 0], ["2022-09-06", 0], ["2022-09-07", 0], ["2022-09-08", 0], ["2022-09-09", 0], ["2022-09-10", 0], ["2022-09-11", 0], ["2022-09-12", 0], ["2022-09-13", 0], ["2022-09-14", 0], ["2022-09-15", 0], ["2022-09-16", 0], ["2022-09-17", 0], ["2022-09-18", 0], ["2022-09-19", 0], ["2022-09-20", 0], ["2022-09-21", 0], ["2022-09-22", 0], ["2022-09-23", 0], ["2022-09-24", 0], ["2022-09-25", 0], ["2022-09-26", 0], ["2022-09-27", 0], ["2022-09-28", 0], ["2022-09-29", 0], ["2022-09-30", 0], ["2022-10-01", 0], ["2022-10-02", 0], ["2022-10-03", 0], ["2022-10-04", 0], ["2022-10-05", 0], ["2022-10-06", 0], ["2022-10-07", 0], ["2022-10-08", 0], ["2022-10-09", 0], ["2022-10-10", 0], ["2022-10-11", 0], ["2022-10-12", 0], ["2022-10-13", 0], ["2022-10-14", 0], ["2022-10-15", 0], ["2022-10-16", 0], ["2022-10-17", 0], ["2022-10-18", 0], ["2022-10-19", 0], ["2022-10-20", 0], ["2022-10-21", 0], ["2022-10-22", 0], ["2022-10-23", 0], ["2022-10-24", 0], ["2022-10-25", 0], ["2022-10-26", 0], ["2022-10-27", 0], ["2022-10-28", 0], ["2022-10-29", 0], ["2022-10-30", 0], ["2022-10-31", 0], ["2022-11-01", 0], ["2022-11-02", 0], ["2022-11-03", 0], ["2022-11-04", 0], ["2022-11-05", 0], ["2022-11-06", 0], ["2022-11-07", 0], ["2022-11-08", 0], ["2022-11-09", 0], ["2022-11-10", 0], ["2022-11-11", 0], ["2022-11-12", 0], ["2022-11-13", 0], ["2022-11-14", 0], ["2022-11-15", 0], ["2022-11-16", 0], ["2022-11-17", 0], ["2022-11-18", 0], ["2022-11-19", 0], ["2022-11-20", 0], ["2022-11-21", 0], ["2022-11-22", 0], ["2022-11-23", 0], ["2022-11-24", 0], ["2022-11-25", 0], ["2022-11-26", 0], ["2022-11-27", 0], ["2022-11-28", 0], ["2022-11-29", 0], ["2022-11-30", 0], ["2022-12-01", 0], ["2022-12-02", 0], ["2022-12-03", 0], ["2022-12-04", 0], ["2022-12-05", 0], ["2022-12-06", 0], ["2022-12-07", 0], ["2022-12-08", 0], ["2022-12-09", 0], ["2022-12-10", 0], ["2022-12-11", 0], ["2022-12-12", 0], ["2022-12-13", 0], ["2022-12-14", 0], ["2022-12-15", 0], ["2022-12-16", 0], ["2022-12-17", 0], ["2022-12-18", 0], ["2022-12-19", 0], ["2022-12-20", 0], ["2022-12-21", 0], ["2022-12-22", 0], ["2022-12-23", 0], ["2022-12-24", 0], ["2022-12-25", 0], ["2022-12-26", 0], ["2022-12-27", 0], ["2022-12-28", 0], ["2022-12-29", 0], ["2022-12-30", 0], ["2022-12-31", 0], ["2023-01-01", 0], ["2023-01-02", 0], ["2023-01-03", 0], ["2023-01-04", 0], ["2023-01-05", 0], ["2023-01-06", 0], ["2023-01-07", 0], ["2023-01-08", 0], ["2023-01-09", 0], ["2023-01-10", 0], ["2023-01-11", 0], ["2023-01-12", 0], ["2023-01-13", 0], ["2023-01-14", 0], ["2023-01-15", 0], ["2023-01-16", 0], ["2023-01-17", 0], ["2023-01-18", 0], ["2023-01-19", 0], ["2023-01-20", 0], ["2023-01-21", 0], ["2023-01-22", 0], ["2023-01-23", 0], ["2023-01-24", 0], ["2023-01-25", 0], ["2023-01-26", 0], ["2023-01-27", 0], ["2023-01-28", 0], ["2023-01-29", 0], ["2023-01-30", 0], ["2023-01-31", 0], ["2023-02-01", 0], ["2023-02-02", 0], ["2023-02-03", 0], ["2023-02-04", 0], ["2023-02-05", 0], ["2023-02-06", 0], ["2023-02-07", 0], ["2023-02-08", 0], ["2023-02-09", 0], ["2023-02-10", 0], ["2023-02-11", 0], ["2023-02-12", 0], ["2023-02-13", 0], ["2023-02-14", 0], ["2023-02-15", 0], ["2023-02-16", 0], ["2023-02-17", 0], ["2023-02-18", 0], ["2023-02-19", 0], ["2023-02-20", 0], ["2023-02-21", 0], ["2023-02-22", 0], ["2023-02-23", 0], ["2023-02-24", 0], ["2023-02-25", 0], ["2023-02-26", 0], ["2023-02-27", 0], ["2023-02-28", 0], ["2023-03-01", 0], ["2023-03-02", 0], ["2023-03-03", 0], ["2023-03-04", 0], ["2023-03-05", 0], ["2023-03-06", 0], ["2023-03-07", 0], ["2023-03-08", 0], ["2023-03-09", 0], ["2023-03-10", 0], ["2023-03-11", 0], ["2023-03-12", 0], ["2023-03-13", 0], ["2023-03-14", 0], ["2023-03-15", 0], ["2023-03-16", 0], ["2023-03-17", 0], ["2023-03-18", 0], ["2023-03-19", 0], ["2023-03-20", 0], ["2023-03-21", 0], ["2023-03-22", 0], ["2023-03-23", 0], ["2023-03-24", 0], ["2023-03-25", 0], ["2023-03-26", 0], ["2023-03-27", 0], ["2023-03-28", 0], ["2023-03-29", 0], ["2023-03-30", 0], ["2023-03-31", 0], ["2023-04-01", 0], ["2023-04-02", 0], ["2023-04-03", 0], ["2023-04-04", 0], ["2023-04-05", 0], ["2023-04-06", 0], ["2023-04-07", 0], ["2023-04-08", 0], ["2023-04-09", 0], ["2023-04-10", 0], ["2023-04-11", 0], ["2023-04-12", 2], ["2023-04-13", 1], ["2023-04-14", 0], ["2023-04-15", 0], ["2023-04-16", 0], ["2023-04-17", 0], ["2023-04-18", 0], ["2023-04-19", 0], ["2023-04-20", 0], ["2023-04-21", 0], ["2023-04-22", 0], ["2023-04-23", 0], ["2023-04-24", 0], ["2023-04-25", 0], ["2023-04-26", 0], ["2023-04-27", 0], ["2023-04-28", 0], ["2023-04-29", 0], ["2023-04-30", 0], ["2023-05-01", 0], ["2023-05-02", 0], ["2023-05-03", 0], ["2023-05-04", 0], ["2023-05-05", 0], ["2023-05-06", 0], ["2023-05-07", 0], ["2023-05-08", 0], ["2023-05-09", 0], ["2023-05-10", 0], ["2023-05-11", 0], ["2023-05-12", 0], ["2023-05-13", 0], ["2023-05-14", 0], ["2023-05-15", 0], ["2023-05-16", 0], ["2023-05-17", 0], ["2023-05-18", 0], ["2023-05-19", 0], ["2023-05-20", 0], ["2023-05-21", 0], ["2023-05-22", 0], ["2023-05-23", 0], ["2023-05-24", 0], ["2023-05-25", 0], ["2023-05-26", 0], ["2023-05-27", 0], ["2023-05-28", 0], ["2023-05-29", 0], ["2023-05-30", 0], ["2023-05-31", 0], ["2023-06-01", 0], ["2023-06-02", 0], ["2023-06-03", 0], ["2023-06-04", 0], ["2023-06-05", 0], ["2023-06-06", 0], ["2023-06-07", 0], ["2023-06-08", 0], ["2023-06-09", 0], ["2023-06-10", 0], ["2023-06-11", 0], ["2023-06-12", 0], ["2023-06-13", 0], ["2023-06-14", 0], ["2023-06-15", 0], ["2023-06-16", 0], ["2023-06-17", 0], ["2023-06-18", 0], ["2023-06-19", 0], ["2023-06-20", 0], ["2023-06-21", 0], ["2023-06-22", 0], ["2023-06-23", 0], ["2023-06-24", 0], ["2023-06-25", 0], ["2023-06-26", 0], ["2023-06-27", 0], ["2023-06-28", 0], ["2023-06-29", 0], ["2023-06-30", 0], ["2023-07-01", 0], ["2023-07-02", 0], ["2023-07-03", 0], ["2023-07-04", 0], ["2023-07-05", 0], ["2023-07-06", 0], ["2023-07-07", 0], ["2023-07-08", 0], ["2023-07-09", 0], ["2023-07-10", 0], ["2023-07-11", 0], ["2023-07-12", 0], ["2023-07-13", 0], ["2023-07-14", 0], ["2023-07-15", 0], ["2023-07-16", 0], ["2023-07-17", 0], ["2023-07-18", 0], ["2023-07-19", 0], ["2023-07-20", 0], ["2023-07-21", 0], ["2023-07-22", 0], ["2023-07-23", 0], ["2023-07-24", 0], ["2023-07-25", 0], ["2023-07-26", 0], ["2023-07-27", 0], ["2023-07-28", 0], ["2023-07-29", 0], ["2023-07-30", 0], ["2023-07-31", 0], ["2023-08-01", 0], ["2023-08-02", 0], ["2023-08-03", 0], ["2023-08-04", 0], ["2023-08-05", 0], ["2023-08-06", 0], ["2023-08-07", 0], ["2023-08-08", 0], ["2023-08-09", 0], ["2023-08-10", 0], ["2023-08-11", 0], ["2023-08-12", 0], ["2023-08-13", 0], ["2023-08-14", 0], ["2023-08-15", 0], ["2023-08-16", 1]]
-        }]
+                
 
-    };
+                
 
-    myChart.setOption(option);
-</script>
+                
+            </div>
+        </div>
+        <hr class="clearfix">
 
-    
-
-    
-
-    <div id="cd-timeline" class="container">
         
-        <div class="cd-timeline-block">
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
-            
-            
-            
-            <div class="cd-timeline-img year" data-aos="zoom-in-up">
-                <a href="/archives/2023">2023</a>
-            </div>
-            
+        
 
-            
-            
-            
-            <div class="cd-timeline-img month" data-aos="zoom-in-up">
-                <a href="/archives/2023/08">08</a>
-            </div>
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>16</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2023/08/16/shi-pin-xiang-mu-kai-fa/">
-                            <div class="card-image">
-                                
-                                
-                                <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="视频项目开发">
-                                
-                                <span class="card-title">视频项目开发</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    @Aspect
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <pre class="line-numbers language-none"><code class="language-none">@Aspect
 @Component
 public class LogAspect {
 
-    private final static Logger LOG = LoggerFactory.getLogger(LogAspect.cla
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2023-08-16
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-user fa-fw"></i>
-                                    小楼oc
-                                    
-                                </span>
-                            </div>
-                        </div>
+    private final static Logger LOG = LoggerFactory.getLogger(LogAspect.class);
 
+    /** 定义一个切点 */
+    @Pointcut("execution(public * com.course.*.controller..*Controller.*(..))")
+    public void controllerPointcut() {}
+
+    @Before("controllerPointcut()")
+    public void doBefore(JoinPoint joinPoint) throws Throwable {
+        // 日志编号
+        MDC.put("UUID", UuidUtil.getShortUuid());
+
+        // 开始打印请求日志
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        HttpServletRequest request = attributes.getRequest();
+        Signature signature = joinPoint.getSignature();
+        String name = signature.getName();
+
+        // 打印业务操作
+        String nameCn = "";
+        if (name.contains("list") || name.contains("query")) {
+            nameCn = "查询";
+        } else if (name.contains("save")) {
+            nameCn = "保存";
+        } else if (name.contains("delete")) {
+            nameCn = "删除";
+        } else {
+            nameCn = "操作";
+        }
+
+        // 使用反射，获取业务名称
+        Class clazz = signature.getDeclaringType();
+        Field field;
+        String businessName = "";
+        try {
+            field = clazz.getField("BUSINESS_NAME");
+            if (!StringUtils.isEmpty(field)) {
+                businessName = (String) field.get(clazz);
+            }
+        } catch (NoSuchFieldException e) {
+            LOG.error("未获取到业务名称");
+        } catch (SecurityException e) {
+            LOG.error("获取业务名称失败", e);
+        }
+
+        // 打印请求信息
+        LOG.info("------------- 【{}】{}开始 -------------", businessName, nameCn);
+        LOG.info("请求地址: {} {}", request.getRequestURL().toString(), request.getMethod());
+        LOG.info("类名方法: {}.{}", signature.getDeclaringTypeName(), name);
+        LOG.info("远程地址: {}", request.getRemoteAddr());
+
+        // 打印请求参数
+        Object[] args = joinPoint.getArgs();
+        Object[] arguments  = new Object[args.length];
+        for (int i = 0; i &lt; args.length; i++) {
+            if (args[i] instanceof ServletRequest
+                    || args[i] instanceof ServletResponse
+                    || args[i] instanceof MultipartFile) {
+                continue;
+            }
+            arguments[i] = args[i];
+        }
+        // 排除字段，敏感字段或太长的字段不显示
+        String[] excludeProperties = {"shard"};
+        PropertyPreFilters filters = new PropertyPreFilters();
+        PropertyPreFilters.MySimplePropertyPreFilter excludefilter = filters.addFilter();
+        excludefilter.addExcludes(excludeProperties);
+        LOG.info("请求参数: {}", JSONObject.toJSONString(arguments, excludefilter)); // 为空的会不打印，但是像图片等长字段也会打印
+    }
+
+    @Around("controllerPointcut()")
+    public Object doAround(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+        long startTime = System.currentTimeMillis();
+        Object result = proceedingJoinPoint.proceed();
+        // 排除字段，敏感字段或太长的字段不显示
+        String[] excludeProperties = {"password", "shard"};
+        PropertyPreFilters filters = new PropertyPreFilters();
+        PropertyPreFilters.MySimplePropertyPreFilter excludefilter = filters.addFilter();
+        excludefilter.addExcludes(excludeProperties);
+        LOG.info("返回结果: {}", JSONObject.toJSONString(result, excludefilter));
+        LOG.info("------------- 结束 耗时：{} ms -------------", System.currentTimeMillis() - startTime);
+        return result;
+    }
+
+}
+这段代码是一个 Spring AOP 切面（Aspect），用于在 Controller 层的方法执行前后进行日志记录<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol>
+<li><code>@Aspect</code> 注解表示这是一个切面类，用于定义切面的横切关注点（cross-cutting concern）。</li>
+<li><code>@Component</code> 注解将这个切面类注册为 Spring 的一个组件，以便 Spring 可以自动扫描和管理它。</li>
+<li><code>@Pointcut</code> 注解定义了一个切点，表示在哪些方法上执行这个切面。在这里，切点定义为所有 <code>com.course.*.controller</code> 包下的 Controller 类的所有方法。</li>
+<li><code>@Before</code> 注解表示在切点方法执行前执行 <code>doBefore</code> 方法。在这里，它用于记录请求的信息。</li>
+<li><code>@Around</code> 注解表示在切点方法执行前后执行 <code>doAround</code> 方法。在这里，它用于记录方法执行前后的信息，以及方法的返回结果。</li>
+</ol>
+<p>在 <code>doBefore</code> 方法中，代码会记录请求的地址、方法名、远程地址、请求参数等信息。参数的敏感字段会被排除，不会被完全记录。</p>
+<p>在 <code>doAround</code> 方法中，代码会记录方法的返回结果，同样会排除掉敏感字段。</p>
+<p>这种 AOP 的方式可以帮助你在不修改具体方法代码的情况下，对请求的进出进行统一的日志记录。这样有助于了解方法的执行情况，进行问题排查等。</p>
+<p>另外，代码中使用了 <code>PropertyPreFilters</code> 来过滤敏感字段，排除不需要在日志中记录的字段，从而保护敏感信息不被泄露。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">小楼oc</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zyscript.github.io/2023/08/16/shi-pin-xiang-mu-kai-fa/">https://zyscript.github.io/2023/08/16/shi-pin-xiang-mu-kai-fa/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">小楼oc</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/08/16/shi-pin-xiang-mu-kai-fa/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="视频项目开发">
+                        
+                        <span class="card-title">视频项目开发</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
                         
                     </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            小楼oc
+                            
+                        </span>
+                    </div>
                 </div>
-            </article>
+
+                
+            </div>
         </div>
         
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-            
-            <div class="cd-timeline-img month" data-aos="zoom-in-up">
-                <a href="/archives/2023/04">04</a>
-            </div>
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>13</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2023/04/13/cheng-xu-she-ji-yu-yan/">
-                            <div class="card-image">
-                                
-                                <img src="https://s1.ax1x.com/2023/04/13/ppx1lad.jpg" class="responsive-img" alt="程序设计语言">
-                                
-                                <span class="card-title">程序设计语言</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    二、程序设计语言1、低级语言和高级语言​	低级语言：机器语言、汇编语言
-​	高级语言：Java、C、C++等面向各类应用的程序设计语言
-2、编译程序和解释程序​	语言之间的翻译形式：汇编、解释和编译
-​	解释器：翻译源程序时不生成独立的目标
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2023-04-13
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-user fa-fw"></i>
-                                    小楼oc
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/Hexo/"><span class="chip bg-color">Hexo</span></a>
-                            
-                            <a href="/tags/Markdown/"><span class="chip bg-color">Markdown</span></a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-        </div>
         
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>12</span>
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2023/04/12/article/">
-                            <div class="card-image">
-                                
-                                <img src="https://s1.ax1x.com/2023/04/13/ppx1lad.jpg" class="responsive-img" alt="Hexo博客新建文档">
-                                
-                                <span class="card-title">Hexo博客新建文档</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2023-04-12
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="post-category">
-                                    搭建博客
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
-
+            <div class="card">
+                <a href="/2023/04/13/cheng-xu-she-ji-yu-yan/">
+                    <div class="card-image">
                         
-                        <div class="card-action article-tags">
+                        <img src="https://s1.ax1x.com/2023/04/13/ppx1lad.jpg" class="responsive-img" alt="程序设计语言">
+                        
+                        <span class="card-title">程序设计语言</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
                             
-                            <a href="/tags/Hexo/"><span class="chip bg-color">Hexo</span></a>
-                            
-                            <a href="/tags/Markdown/"><span class="chip bg-color">Markdown</span></a>
-                            
-                        </div>
                         
                     </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>12</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2023/04/12/hello-world/">
-                            <div class="card-image">
-                                
-                                
-                                <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                                
-                                <span class="card-title">Hello World</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2023-04-12
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-user fa-fw"></i>
-                                    小楼oc
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            小楼oc
+                            
+                        </span>
                     </div>
                 </div>
-            </article>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
         </div>
         
     </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5, h6'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
 
 </main>
 
