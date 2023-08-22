@@ -496,6 +496,170 @@ public class JwtProperties {
 
 <p>@Conponent注解将其注册为bean</p>
 <p>@@ConfigurationProperties批量绑定配置文件中信息</p>
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p>向 <code>JWTUtil.java</code> 文件中添加如下代码进行初始化：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JwtUtil</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Resource</span>
+    <span class="token class-name">JwtProperties</span> jwtProperties<span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>添加生成密钥方法</p>
+<p>在 <code>JWTUtil.java</code> 中创建 generalSecretKey 方法来生成密钥，生成的过程需要使用 JWT 的方法 SecretKeySpec 来生成密钥，该密钥在创建 JWT 和验证 JWT 的时候都会用到且相同，代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">/**
+    * 由字符串生成加密key
+    * @return
+    */
+   private SecretKey generalKey() {
+       // 本地的密码解码
+       byte[] encodedKey = Base64.decodeBase64(jwtProperties.getSecret());
+       // 根据给定的字节数组使用AES加密算法构造一个密钥
+       SecretKey key = new SecretKeySpec(encodedKey, 0, encodedKey.length, "AES");
+       return key;
+   }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="创建jwt实体"><a href="#创建jwt实体" class="headerlink" title="创建jwt实体"></a>创建jwt实体</h5><pre class="line-numbers language-none"><code class="language-none">/**
+   * 创建jwt
+   * @param subject
+   * @return
+   * @throws Exception
+   */
+  public String createJWT(String subject) throws Exception {
+
+      // 生成JWT的时间
+      long nowTime = System.currentTimeMillis();
+      Date nowDate = new Date(nowTime);
+      // 生成签名的时候使用的秘钥secret，切记这个秘钥不能外露，是你服务端的私钥，在任何场景都不应该流露出去，一旦客户端得知这个secret，那就意味着客户端是可以自我签发jwt的
+      SecretKey key = generalKey();
+
+      ScriptEngineManager manager = new ScriptEngineManager();
+      ScriptEngine se = manager.getEngineByName("js");
+      int expireTime = 0;
+      try {
+          expireTime =(int) se.eval(jwtProperties.getPayload().getRegisterdClaims().getExp());
+      } catch (ScriptException e) {
+          e.printStackTrace();
+      }
+
+      // 为payload添加各种标准声明和私有声明
+      DefaultClaims defaultClaims = new DefaultClaims();
+      defaultClaims.setIssuer(jwtProperties.getPayload().getRegisterdClaims().getIss());
+      defaultClaims.setExpiration(new Date(System.currentTimeMillis() + expireTime));
+      defaultClaims.setSubject(subject);
+      defaultClaims.setAudience(jwtProperties.getPayload().getRegisterdClaims().getAud());
+
+      JwtBuilder builder = Jwts.builder() // 表示new一个JwtBuilder，设置jwt的body
+              .setClaims(defaultClaims)
+              .setIssuedAt(nowDate) // iat(issuedAt)：jwt的签发时间
+              .signWith(SignatureAlgorithm.forName(jwtProperties.getHeader().getAlg()), key); // 设置签名，使用的是签名算法和签名使用的秘钥
+
+      return builder.compact();
+  }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="解析jwt"><a href="#解析jwt" class="headerlink" title="解析jwt"></a>解析jwt</h5><pre class="line-numbers language-none"><code class="language-none">/**
+ * 解密jwt
+ *
+ * @param jwt
+ * @return
+ * @throws Exception
+ */
+public Claims parseJWT(String jwt) throws Exception {
+    SecretKey key = generateKeyFromSecret(); // 签名秘钥，和生成的签名的秘钥一模一样
+    Claims claims = Jwts.parser() // 得到DefaultJwtParser
+            .setSigningKey(key) // 设置签名的秘钥
+            .parseClaimsJws(jwt).getBody(); // 设置需要解析的jwt
+    return claims;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>该方法或可重构成</p>
+<pre class="line-numbers language-none"><code class="language-none">@Component
+public class JwtUtil {
+
+    @Autowired
+    private JwtProperties jwtProperties;
+
+    // 从配置文件获取发行者和受众
+    private final String ISSUER = jwtProperties.getPayload().getClaims().getIss();   //签发人
+    private final String AUDIENCE = jwtProperties.getPayload().getClaims().getAud();   //受众
+
+    private final String ALG = jwtProperties.getHeader().getAlg();  //算法
+
+
+    /**
+     * 从密钥字符串生成加密密钥
+     *
+     * @return 生成的密钥
+     */
+    private SecretKey generateKeyFromSecret() {
+        byte[] encodedKey = Base64.decodeBase64(jwtProperties.getSecret());
+        return new SecretKeySpec(encodedKey, 0, encodedKey.length, "AES");
+    }
+
+    /**
+     * 创建 JWT
+     *
+     * @param subject JWT 的主题（通常是用户标识）
+     * @return 生成的 JWT 字符串
+     */
+    public String createJWT(String subject) {
+        SecretKey key = generateKeyFromSecret();
+
+        long nowTime = System.currentTimeMillis();
+        Date nowDate = new Date(nowTime);
+
+        // 从脚本中获取过期时间
+        int expireTime = getExpirationFromScript();
+
+        // 构建 JWT 的声明部分
+        Claims claims = Jwts.claims()
+                .setIssuer(ISSUER)
+                .setExpiration(new Date(nowTime + expireTime))
+                .setSubject(subject)
+                .setAudience(AUDIENCE);
+
+        // 使用声明、签发时间、签名算法和密钥构建 JWT
+        return Jwts.builder()
+                .setClaims(claims)   //声明
+                .setIssuedAt(nowDate)  //签发时间
+                .signWith(SignatureAlgorithm.forName(ALG), key)  //签名算法
+                .compact();
+    }
+
+    /**
+     * 解析 JWT 并返回声明
+     *
+     * @param jwt 要解析的 JWT 字符串
+     * @return 解析后的声明
+     */
+    public Claims parseJWT(String jwt) {
+        SecretKey key = generateKeyFromSecret();
+        return Jwts.parser()
+                .setSigningKey(key)
+                .parseClaimsJws(jwt)
+                .getBody();
+    }
+
+    /**
+     * 从脚本中获取过期时间
+     *
+     * @return 过期时间（秒）
+     */
+    private int getExpirationFromScript() {
+        ScriptEngineManager manager = new ScriptEngineManager();
+        ScriptEngine se = manager.getEngineByName("js");
+        int expireTime = 0;
+        try {
+            expireTime = (int) se.eval(jwtProperties.getPayload().getClaims().getExp());
+        } catch (ScriptException e) {
+            e.printStackTrace();
+        }
+        return expireTime;
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>至此   JWT的创建和解析已经完成</p>
 
                 
             </div>
@@ -603,18 +767,17 @@ public class JwtProperties {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/08/18/springboot-ji-cheng-jjwt/">
+                <a href="/2023/08/22/android-kai-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="springboot集成jjwt">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Android开发">
                         
-                        <span class="card-title">springboot集成jjwt</span>
+                        <span class="card-title">Android开发</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -624,9 +787,9 @@ public class JwtProperties {
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-18
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-22
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -635,7 +798,6 @@ public class JwtProperties {
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
