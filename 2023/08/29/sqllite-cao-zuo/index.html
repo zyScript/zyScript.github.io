@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Android开发, ZY">
-    <meta name="description" content="">
+    <meta name="keywords" content="sqlLite操作, ZY">
+    <meta name="description" content="1、创建安卓项目，如图所示
+2、添加依赖
+这两个依赖项的作用是将Room数据库库集成到你的Android应用程序中。Room提供了一种更高级的方式来管理应用程序中的数据库，通过简化SQLite的使用，并提供方便的注解来定义实体、查询和数据库">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Android开发 | ZY</title>
+    <title>sqlLite操作 | ZY</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -334,12 +336,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Android开发</h1>
+                    <h1 class="description center-align post-title">sqlLite操作</h1>
                 </div>
             </div>
         </div>
@@ -375,7 +377,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-08-22
+                    2023-08-29
                 </div>
                 
 
@@ -399,7 +401,131 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h5 id="1、创建安卓项目，如图所示"><a href="#1、创建安卓项目，如图所示" class="headerlink" title="1、创建安卓项目，如图所示"></a>1、创建安卓项目，如图所示</h5><p><img src="C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20230829213017412.png" alt="image-20230829213017412"></p>
+<h5 id="2、添加依赖"><a href="#2、添加依赖" class="headerlink" title="2、添加依赖"></a>2、添加依赖</h5><p><img src="C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20230829213452541.png" alt="image-20230829213452541"></p>
+<p>这两个依赖项的作用是将Room数据库库集成到你的Android应用程序中。Room提供了一种更高级的方式来管理应用程序中的数据库，通过简化SQLite的使用，并提供方便的注解来定义实体、查询和数据库操作。使用这些依赖项，你可以在应用程序中使用Room的功能，以更有效地处理数据库操作。（可以当做是Android下的mybatis）</p>
+<h5 id="3、项目的目录结构如下"><a href="#3、项目的目录结构如下" class="headerlink" title="3、项目的目录结构如下"></a>3、项目的目录结构如下</h5><p><img src="C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20230829213939188.png" alt="image-20230829213939188"></p>
+<h5 id="4、创建用户实体类"><a href="#4、创建用户实体类" class="headerlink" title="4、创建用户实体类"></a>4、创建用户实体类</h5><p><img src="C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20230829214335244.png" alt="image-20230829214335244"></p>
+<h5 id="5、建立数据持久层，这里暂不写方法"><a href="#5、建立数据持久层，这里暂不写方法" class="headerlink" title="5、建立数据持久层，这里暂不写方法"></a>5、建立数据持久层，这里暂不写方法</h5><p><img src="C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20230829215449284.png" alt="image-20230829215449284"></p>
+<h5 id="6、定义一个数据库类-用于分离数据库结构和代码"><a href="#6、定义一个数据库类-用于分离数据库结构和代码" class="headerlink" title="6、定义一个数据库类  用于分离数据库结构和代码"></a>6、定义一个数据库类  用于分离数据库结构和代码</h5><p><img src="C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20230829220015068.png" alt="image-20230829220015068"></p>
+<h5 id="7、创建UserInfoActivity并修改页面布局"><a href="#7、创建UserInfoActivity并修改页面布局" class="headerlink" title="7、创建UserInfoActivity并修改页面布局"></a>7、创建UserInfoActivity并修改页面布局</h5><p><img src="C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20230829221009018.png" alt="image-20230829221009018"></p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!-- TableLayout是一个容器，用于以行和列的形式排列子视图。 --&gt;
+&lt;!-- android:stretchColumns="*"指定列应均匀拉伸以填充可用宽度。 --&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h5 id="8、新增模态框Activity以及页面布局"><a href="#8、新增模态框Activity以及页面布局" class="headerlink" title="8、新增模态框Activity以及页面布局"></a>8、新增模态框Activity以及页面布局</h5><p><img src="C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20230830094647188.png" alt="image-20230830094647188"></p>
+<h5 id="9、在Util包下增加提示工具类"><a href="#9、在Util包下增加提示工具类" class="headerlink" title="9、在Util包下增加提示工具类"></a>9、在Util包下增加提示工具类</h5><pre class="line-numbers language-none"><code class="language-none">public class ToastUtil {
+
+    public static void show(Context ctx, String desc) {
+        Toast.makeText(ctx, desc, Toast.LENGTH_SHORT).show();
+    }
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="10、编写增添模态框代码"><a href="#10、编写增添模态框代码" class="headerlink" title="10、编写增添模态框代码"></a>10、编写增添模态框代码</h5><pre class="line-numbers language-none"><code class="language-none">public class AddModalActivity extends AppCompatActivity implements View.OnClickListener {
+
+
+    private EditText et_userName;
+    private EditText et_sex;
+
+    private UserDatabase userDatabase;
+    private Button btnSave;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_add_modal);
+
+        et_userName = findViewById(R.id.user_name);
+
+        et_sex = findViewById(R.id.user_sex);
+
+        btnSave = findViewById(R.id.btn_save);
+
+        btnSave.setOnClickListener(this);   //设置按钮监听时间
+
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        if (view.getId() == R.id.btn_save){
+            //执行保存用户方法
+            saveUserInfo();
+        }
+
+    }
+
+    private void saveUserInfo() {
+        String userName = et_userName.getText().toString();
+        String sex = et_sex.getText().toString();
+
+        UserInfo userInfo = new UserInfo();
+        userInfo.setUsername(userName);
+        userInfo.setSex(sex);
+
+        //执行插入语句
+        userDatabase.userDao().insert(userInfo);
+
+        //清空输入框
+        et_userName.setText("");
+        et_sex.setText("");
+
+        //给出提示信息
+        ToastUtil.show(this,"保存成功");
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>11、UserInfoActivity中增加打开模态框的代码</p>
+<pre class="line-numbers language-none"><code class="language-none">package com.example.sqlite_crud;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TableLayout;
+
+import com.example.sqlite_crud.R;
+import com.example.sqlite_crud.database.UserDatabase;
+
+public class UserInfoActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private TableLayout tableLayout;   //用于表示表格数据的布局
+
+    private UserDatabase userDatabase;   //数据库实例
+    private Button btn_add;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_user_info);
+
+
+        //获取 TableLayout控件
+        tableLayout = findViewById(R.id.table_layout);
+
+        btn_add = findViewById(R.id.btn_add);
+        btn_add.setOnClickListener(this);
+
+    }
+
+
+    //打开模态框
+    @Override
+    public void onClick(View view) {
+        //打开新增模态框
+        if (view.getId() == R.id.btn_add){
+            Intent intent = new Intent(this,AddModalActivity.class);
+            startActivity(intent);
+        }
+    }
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>11、</p>
+
                 
             </div>
             <hr/>
@@ -425,7 +551,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zyscript.github.io/2023/08/22/android-kai-fa/">https://zyscript.github.io/2023/08/22/android-kai-fa/</a>
+                    <a href="https://zyscript.github.io/2023/08/29/sqllite-cao-zuo/">https://zyscript.github.io/2023/08/29/sqllite-cao-zuo/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -506,18 +632,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/08/22/android-kai-fa/">
+                <a href="/2023/09/04/android-kai-fa-wen-ti-ji-he/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Android开发">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Android开发问题集合">
                         
-                        <span class="card-title">Android开发</span>
+                        <span class="card-title">Android开发问题集合</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -527,9 +652,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-22
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-09-04
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -538,7 +663,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -549,13 +673,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/08/18/springboot-ji-cheng-jjwt/">
+                <a href="/2023/08/28/mqtt-xie-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="springboot集成jjwt">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="mqtt协议">
                         
-                        <span class="card-title">springboot集成jjwt</span>
+                        <span class="card-title">mqtt协议</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -566,7 +690,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-28
                             </span>
                         <span class="publish-author">
                             
